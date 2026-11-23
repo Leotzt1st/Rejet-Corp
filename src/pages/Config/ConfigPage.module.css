@@ -1,0 +1,191 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 860px;
+}
+
+.header {
+  composes: header from "../../components/layout/AppLayout/WorkspacePage.module.css";
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  composes: title from "../../components/layout/AppLayout/WorkspacePage.module.css";
+}
+
+.subtitle {
+  composes: subtitle from "../../components/layout/AppLayout/WorkspacePage.module.css";
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 10px;
+}
+
+.tab {
+  border: none;
+  background: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition-fast);
+}
+
+.tab:hover {
+  background: var(--panel-sunken);
+  color: var(--color-text);
+}
+
+.tab:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: -2px;
+}
+
+.tabActive,
+.tabActive:hover {
+  background: var(--color-primary-soft);
+  color: var(--tone-green-strong);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content .card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.infoRow span {
+  color: var(--color-text-soft);
+}
+
+.infoRow strong {
+  color: var(--color-text);
+}
+
+.switchList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.switchRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.saveRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.dangerCard {
+  border-left: 4px solid var(--color-danger);
+}
+
+.dangerText {
+  font-size: 13.5px;
+  color: var(--color-text-soft);
+}
+
+.privacyText {
+  margin-bottom: 14px;
+  color: var(--color-text-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.privacyLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.privacyLinks a {
+  color: var(--color-secondary-dark);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacyLinks a:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
+}
+
+.switchHint {
+  margin: 10px 0 0;
+  color: var(--color-text-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.loading {
+  color: var(--color-text-soft);
+  font-size: 14px;
+}
+
+.page a:focus-visible,
+.page button:focus-visible,
+.page input:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .tab {
+    white-space: nowrap;
+  }
+}

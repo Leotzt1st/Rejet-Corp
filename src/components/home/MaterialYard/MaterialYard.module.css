@@ -1,0 +1,226 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: var(--rejet-signal);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.heading h2 {
+  color: var(--rejet-surface);
+  font-family: var(--rejet-display-font);
+  font-size: clamp(25px, 2.6vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.guide {
+  margin-top: 10px;
+  color: #bdc8be;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.replay,
+.pin {
+  cursor: pointer;
+  font: inherit;
+}
+
+.replay {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #546351;
+  border-radius: 8px;
+  background: #172019;
+  color: var(--rejet-signal);
+  font-size: 17px;
+}
+
+.replay:hover {
+  border-color: var(--rejet-signal);
+  background: #283822;
+}
+
+.replay:focus-visible,
+.pin:focus-visible {
+  outline: 2px solid var(--rejet-signal);
+  outline-offset: 3px;
+}
+
+.scene {
+  position: relative;
+  isolation: isolate;
+  margin: 16px 0 0;
+  border: 1px solid #344136;
+  border-radius: 9px;
+  background: #111a14;
+}
+
+.scene > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pin {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 7px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #6d846b;
+  border-radius: 6px;
+  background: #101a13;
+  color: #f4f8ec;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pin:hover {
+  border-color: var(--rejet-signal);
+  background: #273921;
+}
+
+.pin[aria-pressed="true"] {
+  z-index: 2;
+  border-color: var(--rejet-signal);
+  background: var(--rejet-signal);
+  color: #101a13;
+}
+
+.pin:focus-visible {
+  z-index: 3;
+}
+
+.pinNumber,
+.detailNumber {
+  font-variant-numeric: tabular-nums;
+}
+
+.pinNumber {
+  color: var(--rejet-signal);
+}
+
+.pin[aria-pressed="true"] .pinNumber {
+  color: inherit;
+}
+
+.detail {
+  display: grid;
+  min-block-size: 100px;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-content: start;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+.detailNumber {
+  padding-top: 2px;
+  color: var(--rejet-signal);
+  font-family: var(--rejet-display-font);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.detailCopy {
+  padding-left: 11px;
+  border-left: 1px solid #485c47;
+  overflow-wrap: anywhere;
+}
+
+.detail h3 {
+  color: var(--rejet-surface);
+  font-family: var(--rejet-display-font);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.detail p {
+  margin-top: 4px;
+  color: #bdc8be;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cart {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cart {
+    animation: transferPaper 2.5s linear;
+  }
+}
+
+/* Coordinates follow the route in YardArtwork's 560 × 340 viewBox. */
+@keyframes transferPaper {
+  0% {
+    transform: translate(129px, 192px);
+    opacity: 0;
+  }
+
+  8% {
+    transform: translate(150px, 204px);
+    opacity: 1;
+  }
+
+  37% {
+    transform: translate(242px, 257px);
+  }
+
+  52%, 63% {
+    transform: translate(292px, 228px);
+  }
+
+  86% {
+    transform: translate(409px, 160px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(444px, 140px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pin {
+    flex-direction: column;
+    gap: 3px;
+    padding-inline: 5px;
+  }
+
+  .detail {
+    min-block-size: 112px;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .replay {
+    display: none;
+  }
+}

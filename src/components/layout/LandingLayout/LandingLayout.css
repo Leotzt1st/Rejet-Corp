@@ -1,0 +1,26 @@
+.page-container {
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 auto;
+  padding: 0 24px;
+  background: var(--rejet-paper);
+  font-family: var(--rejet-body-font);
+}
+
+body:has(.page-container) {
+  background: var(--rejet-paper);
+}
+
+body:has(.page-container) :is(a, button) {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+  .page-container {
+    padding: 0 18px;
+  }
+}

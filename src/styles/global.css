@@ -1,0 +1,294 @@
+:root {
+  --color-primary: #A8C686;
+  --color-primary-dark: #8fb26d;
+  --color-primary-soft: rgba(168, 198, 134, 0.18);
+  --color-secondary: #74CBE3;
+  --color-secondary-dark: #57b8d4;
+  --color-secondary-soft: rgba(116, 203, 227, 0.14);
+  --color-bg: #f6f7f2;
+  --color-surface: rgba(255, 255, 255, 0.82);
+  --color-surface-strong: rgba(255, 255, 255, 0.96);
+  --color-border: rgba(36, 49, 39, 0.08);
+  --color-border-soft: rgba(255, 255, 255, 0.42);
+  --color-text: #243127;
+  --color-text-soft: #566459;
+  --color-white: #ffffff;
+  --color-shadow: rgba(36, 49, 39, 0.10);
+  --color-success: #5d9f6c;
+  --color-danger: #e74c3c;
+  --color-danger-dark: #c0392b;
+  --color-warning: #e0a63a;
+  --color-info: #57b8d4;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+
+  --blur: blur(16px);
+  --transition: 0.3s ease;
+  --max-width: 1180px;
+
+  --font: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --sidebar-width: 250px;
+
+  /* Identidade visual da landing Rejet Corp. */
+  --rejet-paper: #f1f2ec;
+  --rejet-surface: #fafbf7;
+  --rejet-ink: #0b0b0b;
+  --rejet-pine: #2e7d32;
+  --rejet-signal: #b6ff00;
+  --rejet-steel: #5f6e64;
+  --rejet-display-font: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --rejet-body-font: "IBM Plex Sans", system-ui, sans-serif;
+
+  /* ---- Tokens do painel (área autenticada) — aditivos, não afetam a landing ---- */
+  --panel: #ffffff;
+  --panel-soft: rgba(255, 255, 255, 0.55);
+  --panel-sunken: rgba(36, 49, 39, 0.05);
+  --border-strong: rgba(36, 49, 39, 0.14);
+
+  --shadow-xs: 0 1px 2px rgba(36, 49, 39, 0.05);
+  --shadow-sm: 0 1px 2px rgba(36, 49, 39, 0.05), 0 3px 10px rgba(36, 49, 39, 0.06);
+  --shadow-md: 0 2px 6px rgba(36, 49, 39, 0.05), 0 12px 28px rgba(36, 49, 39, 0.09);
+  --shadow-lg: 0 4px 12px rgba(36, 49, 39, 0.08), 0 24px 52px rgba(36, 49, 39, 0.16);
+
+  --ring: 0 0 0 3px rgba(116, 203, 227, 0.28);
+  --ring-primary: 0 0 0 3px rgba(168, 198, 134, 0.35);
+  --focus-outline: 3px solid rgba(116, 203, 227, 0.55);
+
+  --transition-fast: 0.16s ease;
+
+  --tone-green-strong: #4c673e;
+  --tone-orange-strong: #b56e1a;
+  --tone-yellow-strong: #9a6b12;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-bg);
+  font-family: var(--font);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+}
+
+/* Container utilitário */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(36, 49, 39, 0.04);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 49, 39, 0.18);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(36, 49, 39, 0.3);
+}
+
+/* Textos de página */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.page-subtitle {
+  color: var(--color-text-soft);
+  margin-top: 4px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+
+/* Tela de carregamento de rota privada */
+.privateLoading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-text-soft);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary-dark);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tela de conta desativada */
+.blockedScreen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.blockedCard {
+  max-width: 420px;
+  width: 100%;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 20px 50px var(--color-shadow);
+}
+
+.blockedIcon {
+  font-size: 3rem;
+}
+
+.blockedCard h1 {
+  font-size: 1.4rem;
+}
+
+.blockedCard p {
+  color: var(--color-text-soft);
+  line-height: 1.6;
+}
+
+.blockedCard button {
+  margin-top: 8px;
+}
+
+/* Dark mode (via atributo data-theme no <html>) */
+[data-theme="dark"] {
+  --color-bg: #12150f;
+  --color-surface: rgba(30, 34, 26, 0.72);
+  --color-surface-strong: rgba(38, 43, 33, 0.94);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-soft: rgba(255, 255, 255, 0.12);
+  --color-text: #eef2ea;
+  --color-text-soft: #aeb9a8;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --color-primary-soft: rgba(168, 198, 134, 0.16);
+  --color-secondary-soft: rgba(116, 203, 227, 0.12);
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 198, 134, 0.1),
+    rgba(116, 203, 227, 0.08)
+  ), var(--color-bg);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Tokens do painel no modo escuro */
+[data-theme="dark"] {
+  --panel: #20251d;
+  --panel-soft: rgba(255, 255, 255, 0.045);
+  --panel-sunken: rgba(0, 0, 0, 0.22);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.3), 0 12px 28px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.36), 0 24px 52px rgba(0, 0, 0, 0.5);
+
+  --ring: 0 0 0 3px rgba(116, 203, 227, 0.32);
+  --ring-primary: 0 0 0 3px rgba(168, 198, 134, 0.32);
+  --focus-outline: 3px solid rgba(116, 203, 227, 0.6);
+
+  --tone-green-strong: #c9dda9;
+  --tone-orange-strong: #ecb277;
+  --tone-yellow-strong: #ecc57e;
+}
+
+/* Acessibilidade: respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /marketplace
+Disallow: /produto/
+Disallow: /produtos
+Disallow: /cadastrar-produto
+Disallow: /negociacoes
+Disallow: /mensagens
+Disallow: /favoritos
+Disallow: /notificacoes
+Disallow: /relatorios
+Disallow: /perfil
+Disallow: /config
+Disallow: /admin
+Disallow: /redefinir-senha

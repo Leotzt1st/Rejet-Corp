@@ -1,0 +1,4 @@
+project_id = "rejet-corp"
+
+[functions.finance]
+verify_jwt = false

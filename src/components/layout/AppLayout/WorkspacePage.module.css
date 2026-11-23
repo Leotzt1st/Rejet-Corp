@@ -1,0 +1,22 @@
+.header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.title {
+  color: var(--color-text);
+  font-family: var(--rejet-display-font);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+
+.subtitle {
+  margin-top: 7px;
+  color: var(--color-text-soft);
+  font-size: 14px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}

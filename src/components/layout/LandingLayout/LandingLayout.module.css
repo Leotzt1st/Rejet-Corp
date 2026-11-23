@@ -1,0 +1,38 @@
+.siteContent{
+    transition:.35s ease;
+}
+
+.siteContent.blur{
+    filter:blur(8px);
+    transform:scale(.99);
+    pointer-events:none;
+    user-select:none;
+}
+
+.pageContainer{
+    width:100%;
+    max-width:1180px;
+
+    margin:36px auto 56px;
+
+    padding:0 20px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:28px;
+}
+
+@media(max-width:640px){
+
+.pageContainer{
+
+    margin:24px auto 40px;
+
+    padding:0 16px;
+
+    gap:22px;
+
+}
+
+}

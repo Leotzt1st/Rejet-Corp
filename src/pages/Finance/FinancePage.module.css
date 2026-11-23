@@ -1,0 +1,109 @@
+.page {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block: 10px;
+}
+
+.paymentHeading {
+  scroll-margin-top: 100px;
+  text-wrap: balance;
+}
+
+.fields, .facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+  gap: 14px;
+  align-items: end;
+  margin-block: 14px;
+}
+
+.facts {
+  align-items: stretch;
+}
+
+.facts > div {
+  min-width: 0;
+  padding: 12px 14px;
+  background: var(--panel-soft);
+  border-radius: var(--radius-sm);
+}
+
+.facts dt, .note, .rows p, .rows time {
+  color: var(--color-text-soft);
+  font-size: 14px;
+}
+
+.facts dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.rows {
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rows li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding-block: 14px;
+  border-top: 1px solid var(--color-border);
+  overflow-wrap: anywhere;
+}
+
+.rows li.stacked {
+  display: grid;
+  justify-content: stretch;
+}
+
+.rows p {
+  margin: 4px 0;
+}
+
+.rows a {
+  color: var(--color-text);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.feedback {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--panel-soft);
+}
+
+.page :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .fields, .facts {
+    grid-template-columns: 1fr;
+  }
+}

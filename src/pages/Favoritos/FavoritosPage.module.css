@@ -1,0 +1,51 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  composes: header from "../../components/layout/AppLayout/WorkspacePage.module.css";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.title {
+  composes: title from "../../components/layout/AppLayout/WorkspacePage.module.css";
+}
+
+.subtitle {
+  composes: subtitle from "../../components/layout/AppLayout/WorkspacePage.module.css";
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.continue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-secondary-dark);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.continue:hover {
+  text-decoration: underline;
+}
+
+.page a:focus-visible,
+.page button:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}

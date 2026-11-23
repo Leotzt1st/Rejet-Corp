@@ -1,0 +1,112 @@
+.highlight-section {
+  width: 100%;
+  padding: 12px 0 82px;
+  font-family: var(--rejet-body-font);
+}
+
+.highlight-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+  align-items: center;
+  gap: 50px;
+  padding: clamp(31px, 5vw, 58px);
+  border-left: 5px solid var(--rejet-signal);
+  background: var(--rejet-pine);
+  color: var(--rejet-surface);
+}
+
+.section-tag {
+  margin-bottom: 13px;
+  color: var(--rejet-signal);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.highlight-copy h2 {
+  max-width: 620px;
+  margin-bottom: 13px;
+  color: var(--rejet-surface);
+  font-family: var(--rejet-display-font);
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.highlight-description {
+  max-width: 580px;
+  color: rgba(250, 251, 247, 0.78);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.highlight-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding-left: 28px;
+  border-left: 1px solid rgba(250, 251, 247, 0.25);
+}
+
+.highlight-action > span {
+  color: rgba(250, 251, 247, 0.72);
+  font-size: 12px;
+}
+
+.highlight-btn {
+  display: inline-flex;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 0 17px;
+  border: 1px solid var(--rejet-signal);
+  border-radius: 6px;
+  background: var(--rejet-signal);
+  color: var(--rejet-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.highlight-btn:hover:not(:disabled) {
+  border-color: #e3eea0;
+  background: #e3eea0;
+}
+
+.highlight-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.highlight-btn:focus-visible {
+  outline: 3px solid var(--rejet-signal);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .highlight-section {
+    padding: 4px 0 61px;
+  }
+
+  .highlight-box {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 29px 25px;
+  }
+
+  .highlight-action {
+    padding: 0;
+    border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight-btn {
+    transition: none;
+  }
+}
